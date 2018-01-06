@@ -4,12 +4,13 @@
 
 @section('content')
 
-<h2>Relatório </h2>
+<h2>Lista de alunos </h2>
+<p>Crie uma tela para listar os alunos com todos os campos do aluno na listagem e a opção para filtrar por nome. Considere realizar paginação da lista de alunos.</p>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>Aluno</th>
-      <th>Qnt. Cerstificados</th>
+      <th>Qnt. de Certificados</th>
     </tr>
   </thead>
   <tbody>

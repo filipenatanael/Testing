@@ -15,8 +15,9 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
+          <li><a href="{{  route('admin.courses') }}">Top 100 Certificados</a></li>
+          <li><a href="{{  route('admin.courses.certificates') }}">Top 100 Cursos</a></li>
+          <li><a href="{{  route('admin.courses.students') }}">Lista de alunos</a></li>
         </ul>
       </div>
     </nav>

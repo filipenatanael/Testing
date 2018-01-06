@@ -15,14 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ControlPanel',['as'=>'admin.cursos','uses'=>'Admin\CursoController@index']);
+Route::get('/ControlPanel',['as'=>'admin','uses'=>'Admin\CursoController@index']);
 
-Route::get('/ControlPanel/cursos/add',['as'=>'admin.cursos.add','uses'=>'Admin\CursoController@add']);
+Route::get('/ControlPanel/courses',['as'=>'admin.courses','uses'=>'Admin\CursoController@listCourses']);
 
-Route::post('/ControlPanel/cursos/save',['as'=>'admin.cursos.save','uses'=>'Admin\CursoController@save']);
+Route::get('/ControlPanel/certificados',['as'=>'admin.courses.certificates','uses'=>'Admin\CursoController@listCertificates']);
 
-Route::get('/ControlPanel/cursos/edit/{id}',['as'=>'admin.cursos.edit','uses'=>'Admin\CursoController@edit']);
+Route::get('/ControlPanel/students',['as'=>'admin.courses.students','uses'=>'Admin\CursoController@listStudents']);
 
-Route::put('/ControlPanel/cursos/update/{id}',['as'=>'admin.cursos.update','uses'=>'Admin\CursoController@update']);
+Route::get('/ControlPanel/courses/add',['as'=>'admin.courses.add','uses'=>'Admin\CursoController@add']);
 
-Route::put('/ControlPanel/cursos/delete/{id}',['as'=>'admin.cursos.delete','uses'=>'Admin\CursoController@delete']);
+Route::post('/ControlPanel/courses/save',['as'=>'admin.courses.save','uses'=>'Admin\CursoController@save']);
+
+Route::get('/ControlPanel/courses/edit/{id}',['as'=>'admin.courses.edit','uses'=>'Admin\CursoController@edit']);
+
+Route::put('/ControlPanel/courses/update/{id}',['as'=>'admin.courses.update','uses'=>'Admin\CursoController@update']);
+
+Route::put('/ControlPanel/courses/delete/{id}',['as'=>'admin.courses.delete','uses'=>'Admin\CursoController@delete']);
