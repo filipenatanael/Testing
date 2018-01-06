@@ -22,6 +22,7 @@ class CreateAlunosTable extends Migration
 			      $table->string('senha', 20);
 			      $table->string('telefone', 25);
 			      $table->date('data_nascimento');
+
         });
     }
 

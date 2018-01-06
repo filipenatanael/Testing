@@ -15,11 +15,13 @@ class CreateAlunoCertificadosTable extends Migration
     {
         Schema::create('aluno_certificados', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('aluno_id')->index('aluno_id');
-			      $table->integer('curso_id')->index('curso_id');
 			      $table->date('datamatricula');
 			      $table->date('cadaconclusao');
 			      $table->float('nota', 10);
+            $table->integer('aluno_id')->unsigned();
+            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+            $table->integer('curso_id')->unsigned();
+            $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
         });
     }
 
