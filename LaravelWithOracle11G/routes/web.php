@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/test',['as'=>'testing','uses'=>'Testing\TestController@index']);
+
+Route::get('teste', function() {
+    dd (DB::connection()->getPdo());
+});
+
+
+
+
+//Route::get('/ControlPanel',['as'=>'admin','uses'=>'Admin\CursoController@index']);
