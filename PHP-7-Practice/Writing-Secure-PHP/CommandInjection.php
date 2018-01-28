@@ -1,8 +1,13 @@
 <?php
+/* Preventing Command Injection
+
+Escape shell metacharacters
+string escapeshellcmd ( string $command )
+
+*/
 if($_SERVER["REQUEST_METHOD"] === 'POST')
 {
   $command = escapeshellcmd($_POST['input_cmd']);
-
   echo "<pre>";
   $last_line = system($command, $return_var);
   echo "</pre>";
