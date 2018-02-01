@@ -11,6 +11,27 @@
 |
 */
 
+/* (::) Paamayim Nekudotayim */
 Route::get('/', function () {
     return view('welcome');
+});
+
+/* ID is required!! */
+Route::get('/contact/{id?}', function($id = null){
+     return "Contact ID: $id";
+});
+
+/* ID is not required!!
+Route::get('/contact/{id?}', function($id){
+     echo "Contact $id";
+});
+*/
+
+Route::post('/contact', function(){
+     dd($_POST);
+     return "Contact POST";
+});
+
+Route::put('/contact', function(){
+     return "Contact PUT";
 });
