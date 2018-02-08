@@ -8,11 +8,27 @@ class ContactController extends Controller
 {
     public function index()
     {
-      return 'This is a Index of ContactController!';
+      $contactsArray = [
+        ["name"=>"McCree", "phonenumber"=>"0000-0001"],
+        ["name"=>"Reaper", "phonenumber"=>"0000-0002"],
+      ];
+
+      $contactsObject = [
+        (object) ["name"=>"Reaper", "phonenumber"=>"0000-0002"],
+        (object) ["name"=>"Tracer", "phonenumber"=>"0000-0003"],
+      ];
+
+
+      return view('contact.index', compact('contactsArray','contactsObject'));
+      /* Alternative way to do
+      return view('contact.index', ["data"=>$contacts]);
+      */
     }
 
-    public function create()
+    public function create(Request $request)
     {
+      //dd($request['name']);
+      dd($request->all());
       return 'This is a create of ContactController!';
     }
 
