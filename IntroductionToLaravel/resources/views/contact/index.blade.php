@@ -1,16 +1,19 @@
-<h3>This a view Index!</h3>
+@extends('layouts.template')
 
-<h4>Using Array:</h4>
+@section('title','Introdution To Laravel 5.5')
 
-@foreach($contactsArray as $contact)
+@section('content')
+  <h3>This a view Index!</h3>
+
+  <h4>Using Array:</h4>
+  @foreach($contactsArray as $contact)
     <p>{{ $contact['name'] }}</p>
     <p>{{ $contact['phonenumber'] }}</p>
-@endforeach
+  @endforeach
 
-
-<h4>Using Array:</h4>
-
-@foreach($contactsObject as $contact)
+  <h4>Using Array:</h4>
+  @foreach($contactsObject as $contact)
     <p>{{ $contact->name }}</p>
     <p>{{ $contact->phonenumber }}</p>
-@endforeach
+  @endforeach
+@endsection
