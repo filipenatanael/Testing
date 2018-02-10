@@ -19,6 +19,9 @@ class ContactController extends Controller
       ];
 
 
+      $contact = new \App\Contact();
+      dd($contact->list());
+
       return view('contact.index', compact('contactsArray','contactsObject'));
       /* Alternative way to do
       return view('contact.index', ["data"=>$contacts]);
