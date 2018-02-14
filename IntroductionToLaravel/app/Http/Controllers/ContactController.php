@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
 
 class ContactController extends Controller
 {
@@ -18,9 +19,10 @@ class ContactController extends Controller
         (object) ["name"=>"Tracer", "phonenumber"=>"0000-0003"],
       ];
 
-
-      $contact = new \App\Contact();
-      dd($contact->list());
+      /* $contact = new \App\Contact(); */
+      $contact = new Contact();
+      $con = $contact->list();
+      dd($con->name);
 
       return view('contact.index', compact('contactsArray','contactsObject'));
       /* Alternative way to do
