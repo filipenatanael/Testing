@@ -24,7 +24,7 @@
             <td>{{ $registry->id }}</td>
             <td>{{ $registry->title }}</td>
             <td>{{ $registry->description }}</td>
-            <td> <img src="{{ asset('$registry->image') }}" alt="{{ $registry->title }}" width="120"></td>
+            <td> <img src="{{ asset($registry->image) }}" alt="{{ $registry->title }}" width="120", height="120"></td>
             <td>{{ $registry->published }}</td>
             <td>
               <a class="btn deep-orange" href="{{ route('admin.courses.edit',$registry->id) }}">Edit</a>

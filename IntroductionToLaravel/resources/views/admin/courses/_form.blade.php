@@ -25,14 +25,14 @@
 
 @if(isset($registry->image))
 <div class="input-field">
-  <img src="{{ asset('$registry->image') }}" width="150" />
+  <img src="{{ asset($registry->image) }}" width="150" />
 </div>
 @endif
 
 <div>
   <p>
-   <input type="checkbox" id="test5" {{isset($registry->published) && $registry->published == 'yes' ? 'checked' : '' }} value="true">
-   <label for="test5">Published?</label>
+   <input type="checkbox" id="published" name="published" {{isset($registry->published) && $registry->published == 'yes' ? 'checked' : '' }} value="true">
+   <label for="published">Published?</label>
   </p>
-<br/><br/>
+  <br/><br/>
 </div>

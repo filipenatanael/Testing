@@ -10,7 +10,7 @@
     <form class="" action="{{ route('admin.courses.save') }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       @include('admin.courses._form')
-      <button type="button" class="btn deep_orange">Save</button>
+      <button class="btn deep_orange">Save</button>
     </form>
     </div>
   </div>
