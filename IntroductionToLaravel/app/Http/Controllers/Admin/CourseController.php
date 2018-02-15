@@ -16,6 +16,6 @@ class CourseController extends Controller
 
     public function add()
     {
-      return 'ADD Method';
+      return view('admin.courses.add');
     }
 }
