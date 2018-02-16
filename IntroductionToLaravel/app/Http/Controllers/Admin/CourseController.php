@@ -23,13 +23,15 @@ class CourseController extends Controller
     {
      $data = $request->all();
 
-     if(isset($data['published'])){
+     if(isset($data['published']))
+     {
        $data['published'] = 'yes';
      }else{
        $data['published'] = 'no';
      }
 
-     if($request->hasFile('image')) {
+     if($request->hasFile('image'))
+     {
         $image = $request->file('image');
         $num = rand(1000,9999);
         $dir = "img/courses";
@@ -39,8 +41,44 @@ class CourseController extends Controller
         $data['image'] = $dir."/".$ImageName;
      }
      Course::create($data);
-
      return redirect()->route('admin.courses');
     }
+
+    public function edit($id)
+    {
+         $registry = Course::find($id);
+         return view('admin.courses.edit', compact('registry'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
