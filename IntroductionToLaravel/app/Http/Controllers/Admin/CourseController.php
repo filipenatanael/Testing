@@ -81,23 +81,4 @@ class CourseController extends Controller
       return redirect()->route('admin.courses');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -11,10 +11,13 @@
 |
 */
 
-/* (::) Paamayim Nekudotayim */
+/* (::) Paamayim Nekudotayim
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+Route::get('/',['as'=>'site.welcome','uses'=>'Site\WelcomeController@index']);
 
 Route::get('/contact/{id?}',['uses'=>'ContactController@index']);
 Route::post('/contact',['uses'=>'ContactController@create']);
