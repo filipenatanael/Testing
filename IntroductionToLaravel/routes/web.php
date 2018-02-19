@@ -18,6 +18,9 @@ Route::get('/', function () {
 */
 
 Route::get('/',['as'=>'site.welcome','uses'=>'Site\WelcomeController@index']);
+Route::get('/login',['as'=>'site.login','uses'=>'Site\LoginController@index']);
+Route::post('/login/getin',['as'=>'site.login.getin','uses'=>'Site\LoginController@getin']);
+
 
 Route::get('/contact/{id?}',['uses'=>'ContactController@index']);
 Route::post('/contact',['uses'=>'ContactController@create']);
@@ -32,6 +35,11 @@ Route::get('/admin/courses/edit/{id}',['as'=>'admin.courses.edit','uses'=>'Admin
 Route::put('/admin/courses/update/{id}',['as'=>'admin.courses.update','uses'=>'Admin\CourseController@update']);
 
 Route::get('/admin/courses/delete/{id}',['as'=>'admin.courses.delete','uses'=>'Admin\CourseController@delete']);
+
+
+
+
+
 
 
 
