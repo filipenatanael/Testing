@@ -28,4 +28,5 @@ class UserSeeder extends Seeder
         echo "Was updated!";
       }
     }
+
 }

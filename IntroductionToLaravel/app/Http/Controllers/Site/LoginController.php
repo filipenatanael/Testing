@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -12,17 +13,20 @@ class LoginController extends Controller
       return view('login.index');
     }
 
-    public function getin(Request $request)
+    public function dologin(Request $request)
     {
       $data = $request->all();
-
-      if(Auth::attempt([
-        'email'=>$data['email'],
-        'password'=>$data['password']
-      ]))
+      if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password']]))
       {
         return redirect()->route('admin.courses');
       }
-      return redirect()->route('login.index');
+      return redirect()->route('login');
+    }
+
+    public function logout()
+    {
+      Auth::logout();
+      return redirect()->route('site.welcome');
+      //return redirect()->route('login');
     }
 }
