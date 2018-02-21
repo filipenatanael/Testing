@@ -2,11 +2,8 @@
 /* PDO("DSN- DATA SOURCE NAME"); */
 
 $conn = new PDO("mysql:dbname=phonebook; host=localhost","root", "");
-
 $stmt = $conn->prepare("SELECT * FROM CONTACTS");
-
 $stmt->execute();
-
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 /*
