@@ -2,11 +2,12 @@
 
 $conn = new PDO("mysql:dbname=phonebook; host=localhost","root", "");
 
+
 $query = "INSERT INTO
           CONTACTS (NAME, EMAIL, PHONE_NUMBER)
           VALUES
           (:NAME, :EMAIL, :PHONE_NUMBER)";
-          
+
 $stmt = $conn->prepare($query);
 
 $input_name = "John Cash";
