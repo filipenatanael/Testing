@@ -3,21 +3,15 @@
 $conn = new PDO("mysql:dbname=phonebook; host=localhost","root", "");
 
 $conn->beginTransaction();
-/* ------------------------------------------------ */
-$query = "DELETE FROM
-          CONTACTS
-          WHERE
-          ID = :ID";
+/* ---------------------------------------------------------------- */
 
-$stmt = $conn->prepare($query);
+$stmt = $conn->prepare("DELETE FROM CONTACTS WHERE ID = ?");
 
 $contact_id = 3;
 
-$stmt->bindParam(":ID", $contact_id);
+$stmt->execute(array($contact_id));
 
-$stmt->execute();
-
-/* ------------------------------------------------ */
+/* ---------------------------------------------------------------- */
 
 /* $conn->rollback(); */
 
