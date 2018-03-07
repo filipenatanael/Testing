@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/testing',['as'=>'testing.index','uses'=>'Testing\TestingController@index']);
+
+
+
+Route::get('TestingConnect', function() {
+    dd(DB::connection()->getPdo());
+});

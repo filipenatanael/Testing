@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'oracle'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,6 +52,18 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+        ],
+
+        'oracle' => [
+          'driver'       => 'oracle',
+          'host'         => 'localhost',
+          'port'         => '1521',
+          'database'     => 'UNIVERSITY',
+          'service_name' => 'XE',
+          'username'     => 'system',
+          'password'     => 'R@@t',
+          'charset'      => 'AL32UTF8',
+          'prefix'       => '',
         ],
 
         'pgsql' => [
