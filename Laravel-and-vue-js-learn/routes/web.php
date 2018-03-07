@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/testing',['as'=>'testing.index','uses'=>'Testing\TestingController@index']);
 
 
+/**
+ * Routes to create new tests
+ */
+Route::get('/testing/default',['as'=>'default.index','uses'=>'Testing\DefaultController@index']);
 
 Route::get('TestingConnect', function() {
     dd(DB::connection()->getPdo());

@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 /**
  * Class to testing
  */
-class TestingController extends Controller
+class DefaultController extends Controller
 {
 
   public function index()
