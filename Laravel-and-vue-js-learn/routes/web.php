@@ -25,3 +25,7 @@ Route::get('/testing/default',['as'=>'default.index','uses'=>'Testing\DefaultCon
 Route::get('TestingConnect', function() {
     dd(DB::connection()->getPdo());
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
