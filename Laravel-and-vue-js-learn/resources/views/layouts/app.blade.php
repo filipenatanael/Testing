@@ -15,9 +15,7 @@
 </head>
 <body>
     <div id="app">
-
      <Navigation title="{{ config('app.name', 'Laravel') }}" url="{{ url('/') }}">
-
        <!-- Authentication Links -->
        @guest
            <li><a href="{{ route('login') }}">Login</a></li>
@@ -45,6 +43,7 @@
        @endguest
 
      </Navigation>
+
 
         @yield('content')
     </div>
