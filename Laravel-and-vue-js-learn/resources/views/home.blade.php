@@ -9,15 +9,15 @@
 
                <div class="row">
                  <div class="col-md-4">
-                   <Panel title="Dashboard">Testing Vue JS... 1</Panel>
+                   <Panel title="Dashboard" color="green">Testing Vue JS... 1</Panel>
                  </div>
 
                  <div class="col-md-4">
-                   <Panel title="Dashboard">Testing Vue JS... 2</Panel>
+                   <Panel title="Dashboard" color="panel-warning">Testing Vue JS... 2</Panel>
                  </div>
 
                  <div class="col-md-4">
-                   <Panel title="Dashboard">Testing Vue JS... 3</Panel>
+                   <Panel title="Dashboard" color="panel-info">Testing Vue JS... 3</Panel>
                  </div>
                </div>
 
