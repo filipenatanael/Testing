@@ -43938,7 +43938,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "small-box bg-aqua" }, [
       _c("div", { staticClass: "inner" }, [
-        _c("h3", [_vm._v("150")]),
+        _c("h3", [_vm._v("170")]),
         _vm._v(" "),
         _c("p", [_vm._v("New Orders")])
       ]),

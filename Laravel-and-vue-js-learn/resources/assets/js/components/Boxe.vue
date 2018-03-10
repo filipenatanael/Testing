@@ -1,7 +1,7 @@
 <template>
   <div class="small-box bg-aqua">
     <div class="inner">
-      <h3>150</h3>
+      <h3>170</h3>
 
       <p>New Orders</p>
     </div>
