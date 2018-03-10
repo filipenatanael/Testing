@@ -1,7 +1,6 @@
 <template>
   <div v-bind:class="defineColor">
       <div class="panel-heading">{{ title }}</div>
-
       <div class="panel-body">
           <slot></slot>
       </div>
@@ -16,12 +15,8 @@
              return "panel "+(this.color || "panel-default");
            }
         }
-
-
-
     }
 </script>
-
 
 <style media="screen">
   .green {
