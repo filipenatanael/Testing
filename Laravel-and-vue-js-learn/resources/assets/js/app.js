@@ -19,7 +19,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('Navigation', require('./components/Navigation.vue'));
 Vue.component('Panel', require('./components/Panel.vue'));
 Vue.component('Boxe', require('./components/Boxe.vue'));
-Vue.component('MyBody', require('./components/MyBody.vue'));
+Vue.component('the-body-site', require('./components/the-body-site.vue'));
 
 const app = new Vue({
     el: '#app'

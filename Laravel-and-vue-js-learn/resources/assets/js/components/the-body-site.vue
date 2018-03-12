@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="row">
-          <div class="defineSize">
+          <div v-bind:class="defineSize">
               <slot></slot>
           </div>
       </div>
@@ -12,7 +12,7 @@
     export default {
        props: ['size'],
        computed:{
-         defineSize: function() {
+         defineSize: function(){
            if(this.size >= 12){
              return `col-md-12`
            } else if(this.size <= 2){
