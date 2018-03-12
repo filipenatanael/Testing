@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
+   Route::resource('articles', 'ArticlesController');
+});
 
 
 /**
