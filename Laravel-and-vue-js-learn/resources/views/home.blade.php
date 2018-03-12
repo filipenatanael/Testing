@@ -8,7 +8,7 @@
                <div class="row">
 
                  <div class="col-md-4">
-                  <Boxe></Boxe>
+                  <Boxe amount="100" title="Shoes" url="#" color="orange" icon="ion ion-stats-bars"></Boxe>
                  </div>
 
                  <div class="col-md-4">

@@ -1,23 +1,29 @@
 <template>
-  <div class="small-box bg-aqua">
+  <div class="small-box" v-bind:style="defineColor">
     <div class="inner">
-      <h3>170</h3>
+      <h3>{{ amount }}</h3>
 
-      <p>New Orders</p>
+      <p>{{ title }}</p>
     </div>
     <div class="icon">
-      <i class="ion ion-stats-bars"></i>
+      <i v-bind:class="icon"></i>
     </div>
     <a href="#" class="small-box-footer">
-      More info <i class="fa fa-arrow-circle-right"></i>
+      See more <i class="fa fa-arrow-circle-right"></i>
     </a>
   </div>
 </template>
 
 <script>
-export default {
+  export default {
+     props: ['title','amount','url','color','icon'],
+     computed: {
+       defineColor: function() {
+         return `background-color: ${this.color} !important;`
+       }
+     }
 
-}
+  }
 </script>
 
 <style media="screen">
@@ -31,6 +37,12 @@ export default {
     display: block;
     margin-bottom: 20px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #FFF;
+  }
+
+  .small-box:hover {
+    text-decoration: none;
+    color: #f9f9f9;
   }
 
   .small-box>.inner {
@@ -69,6 +81,10 @@ export default {
     color: rgba(0,0,0,0.15);
   }
 
+  .small-box:hover .icon {
+    font-size: 95px;
+  }
+
   .small-box>.small-box-footer {
     position: relative;
     text-align: center;
@@ -83,5 +99,16 @@ export default {
 
   a {
     color: #3c8dbc;
+  }
+
+  .small-box>.small-box-footer:hover {
+    color: #fff;
+    background: rgba(0,0,0,0.15);
+  }
+
+  a:hover, a:active, a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #72afd2;
   }
 </style>
