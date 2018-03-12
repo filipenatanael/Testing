@@ -1,30 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <MyBody>
+    <Panel title="Dashboard">
       <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-              <Panel title="Dashboard">
-               <div class="row">
+        <div class="col-md-4">
+          <Boxe
+          amount="100"
+          title="Shoes"
+          url="#"
+          color="orange"
+          icon="ion ion-stats-bars"
+          />
+        </div>
 
-                 <div class="col-md-4">
-                  <Boxe amount="100" title="Shoes" url="#" color="orange" icon="ion ion-stats-bars"></Boxe>
-                 </div>
+        <div class="col-md-4">
+          <Boxe
+          amount="200"
+          title="Shoes"
+          url="#"
+          color="green"
+          icon="ion ion-stats-bars"
+          />
+        </div>
 
-                 <div class="col-md-4">
-                   <Panel title="Dashboard" color="green">Testing Vue JS... 1</Panel>
-                 </div>
-
-                 <div class="col-md-4">
-                   <Panel title="Dashboard" color="panel-info">Testing Vue JS... 3</Panel>
-                 </div>
-
-               </div>
-               <Panel title="Dashboard">Testing Vue JS...</Panel>
-               <Panel title="Dashboard">Testing Vue JS...</Panel>
-
-              </Panel>
-          </div>
+        <div class="col-md-4">
+          <Boxe
+          amount="300"
+          title="Shoes"
+          url="#"
+          color="blue"
+          icon="ion ion-stats-bars"
+          />
+        </div>
       </div>
-  </div>
+      <Panel title="Dashboard">Testing Vue JS...</Panel>
+    </Panel>
+  </MyBody>
 @endsection
