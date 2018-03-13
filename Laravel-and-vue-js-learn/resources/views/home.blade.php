@@ -7,8 +7,8 @@
         <div class="col-md-4">
           <Boxe
           amount="100"
-          title="Shoes"
-          url="#"
+          title="Articles"
+          url="{{ route('articles.index') }}"
           color="orange"
           icon="ion ion-stats-bars"
           />

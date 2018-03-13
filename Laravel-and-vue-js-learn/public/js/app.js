@@ -1410,7 +1410,7 @@ Vue.component('example-component', __webpack_require__(41));
 Vue.component('Navigation', __webpack_require__(44));
 Vue.component('Panel', __webpack_require__(47));
 Vue.component('Boxe', __webpack_require__(53));
-Vue.component('the-body-site', __webpack_require__(83));
+Vue.component('the-body-site', __webpack_require__(58));
 
 var app = new Vue({
   el: '#app'
@@ -43932,20 +43932,13 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "icon" }, [_c("i", { class: _vm.icon })]),
     _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+    _c("a", { staticClass: "small-box-footer", attrs: { href: _vm.url } }, [
       _vm._v("\n    See more "),
       _c("i", { staticClass: "fa fa-arrow-circle-right" })
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -43956,45 +43949,15 @@ if (false) {
 }
 
 /***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(59)
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44033,7 +43996,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44067,7 +44030,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 85 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44089,6 +44052,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-8b98e522", module.exports)
   }
 }
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
