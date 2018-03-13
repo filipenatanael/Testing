@@ -1382,7 +1382,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(61);
+module.exports = __webpack_require__(64);
 
 
 /***/ }),
@@ -1410,7 +1410,8 @@ Vue.component('example-component', __webpack_require__(41));
 Vue.component('Navigation', __webpack_require__(44));
 Vue.component('Panel', __webpack_require__(47));
 Vue.component('Boxe', __webpack_require__(53));
-Vue.component('the-body-site', __webpack_require__(58));
+Vue.component('body-site', __webpack_require__(58));
+Vue.component('list-table', __webpack_require__(61));
 
 var app = new Vue({
   el: '#app'
@@ -43974,7 +43975,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\the-body-site.vue"
+Component.options.__file = "resources\\assets\\js\\components\\BodySite.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -43983,9 +43984,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-8b98e522", Component.options)
+    hotAPI.createRecord("data-v-22f4e600", Component.options)
   } else {
-    hotAPI.reload("data-v-8b98e522", Component.options)
+    hotAPI.reload("data-v-22f4e600", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44049,12 +44050,161 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-8b98e522", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-22f4e600", module.exports)
   }
 }
 
 /***/ }),
 /* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ListTable.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0312bf2e", Component.options)
+  } else {
+    hotAPI.reload("data-v-0312bf2e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['titles']
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("a", { attrs: { href: "" } }, [_vm._v("Create")]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table table-striped table-hover" }, [
+      _c("thead", [
+        _c(
+          "tr",
+          _vm._l(_vm.titles, function(title) {
+            return _c("th", [_vm._v(_vm._s(title))])
+          })
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tbody", [
+      _c("tr", [
+        _c("td", [_vm._v("1")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Testing Laravel")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("Testing by using laravel framework")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("John W.")]),
+        _vm._v(" "),
+        _c("td", [_vm._v("05/23/2010")]),
+        _vm._v(" "),
+        _c("td", [
+          _vm._v("\n          | "),
+          _c("a", { attrs: { href: "" } }, [_vm._v("See more")]),
+          _vm._v(" |\n          "),
+          _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+          _vm._v(" |\n          "),
+          _c("a", { attrs: { href: "" } }, [_vm._v("Delete")]),
+          _vm._v(" |\n        ")
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0312bf2e", module.exports)
+  }
+}
+
+/***/ }),
+/* 64 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

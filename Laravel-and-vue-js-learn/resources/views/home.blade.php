@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <the-body-site size="12">
+  <body-site size="12">
     <Panel title="Dashboard">
       <div class="row">
         <div class="col-md-4">
@@ -36,5 +36,5 @@
       </div>
       <Panel title="Dashboard">Testing Vue JS...</Panel>
     </Panel>
-  </the-body-site>
+  </body-site>
 @endsection
