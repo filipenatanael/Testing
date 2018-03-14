@@ -8,12 +8,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Testing Laravel</td>
-          <td>Testing by using laravel framework</td>
-          <td>John W.</td>
-          <td>05/23/2010</td>
+        <tr v-for="item in itens">
+          <td v-for="i in item">{{ i }}</td>
+
           <td>
             | <a href="">See more</a> |
             <a href="">Edit</a> |
@@ -27,6 +24,6 @@
 
 <script>
   export default {
-    props: ['titles']
+    props: ['titles','itens']
   }
 </script>

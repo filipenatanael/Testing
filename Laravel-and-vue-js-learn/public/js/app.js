@@ -44131,12 +44131,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['titles']
+  props: ['titles', 'itens']
 });
 
 /***/ }),
@@ -44160,7 +44157,22 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "tbody",
+        _vm._l(_vm.itens, function(item) {
+          return _c(
+            "tr",
+            [
+              _vm._l(item, function(i) {
+                return _c("td", [_vm._v(_vm._s(i))])
+              }),
+              _vm._v(" "),
+              _vm._m(0, true)
+            ],
+            2
+          )
+        })
+      )
     ])
   ])
 }
@@ -44169,28 +44181,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tbody", [
-      _c("tr", [
-        _c("td", [_vm._v("1")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Testing Laravel")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Testing by using laravel framework")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("John W.")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("05/23/2010")]),
-        _vm._v(" "),
-        _c("td", [
-          _vm._v("\n          | "),
-          _c("a", { attrs: { href: "" } }, [_vm._v("See more")]),
-          _vm._v(" |\n          "),
-          _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
-          _vm._v(" |\n          "),
-          _c("a", { attrs: { href: "" } }, [_vm._v("Delete")]),
-          _vm._v(" |\n        ")
-        ])
-      ])
+    return _c("td", [
+      _vm._v("\n          | "),
+      _c("a", { attrs: { href: "" } }, [_vm._v("See more")]),
+      _vm._v(" |\n          "),
+      _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+      _vm._v(" |\n          "),
+      _c("a", { attrs: { href: "" } }, [_vm._v("Delete")]),
+      _vm._v(" |\n        ")
     ])
   }
 ]
