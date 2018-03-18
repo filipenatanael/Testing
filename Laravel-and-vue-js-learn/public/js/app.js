@@ -44142,9 +44142,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['titles', 'itens', 'create', 'detail', 'edit', '_delete', 'token']
+  props: ['titles', 'itens', 'create', 'detail', 'edit', '_delete', 'token'],
+  methods: {
+    executeForm: function executeForm(index) {
+      document.getElementById(index).submit();
+    }
+  }
 });
 
 /***/ }),
@@ -44179,7 +44189,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.itens, function(item) {
+        _vm._l(_vm.itens, function(item, index) {
           return _c(
             "tr",
             [
@@ -44192,7 +44202,13 @@ var render = function() {
                     _vm._delete && _vm.token
                       ? _c(
                           "form",
-                          { attrs: { action: "index.html", method: "post" } },
+                          {
+                            attrs: {
+                              id: _vm.form_id,
+                              action: _vm._delete,
+                              method: "post"
+                            }
+                          },
                           [
                             _c("input", {
                               attrs: {
@@ -44219,32 +44235,63 @@ var render = function() {
                                 ])
                               : _vm._e(),
                             _vm._v(" |\n             "),
-                            _vm._delete
-                              ? _c("a", { attrs: { href: _vm._delete } }, [
-                                  _vm._v("Delete")
-                                ])
-                              : _vm._e(),
-                            _vm._v(" |\n           ")
+                            _c(
+                              "a",
+                              {
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.executeForm(index)
+                                  }
+                                }
+                              },
+                              [_vm._v(" Delete")]
+                            )
                           ]
                         )
                       : _vm._e(),
-                    _vm._v("\n\n          | "),
-                    _vm.detail
-                      ? _c("a", { attrs: { href: _vm.detail } }, [
-                          _vm._v("See more")
+                    _vm._v(" "),
+                    !_vm.token
+                      ? _c("span", [
+                          _vm._v("\n            | "),
+                          _vm.detail
+                            ? _c("a", { attrs: { href: _vm.detail } }, [
+                                _vm._v("See more")
+                              ])
+                            : _vm._e(),
+                          _vm._v(" |\n            "),
+                          _vm.edit
+                            ? _c("a", { attrs: { href: _vm.edit } }, [
+                                _vm._v("Edit")
+                              ])
+                            : _vm._e(),
+                          _vm._v(" |\n            "),
+                          _vm._delete
+                            ? _c("a", { attrs: { href: _vm._delete } }, [
+                                _vm._v("Delete")
+                              ])
+                            : _vm._e(),
+                          _vm._v(" |\n            ")
                         ])
                       : _vm._e(),
-                    _vm._v(" |\n          "),
-                    _vm.edit
-                      ? _c("a", { attrs: { href: _vm.edit } }, [_vm._v("Edit")])
-                      : _vm._e(),
-                    _vm._v(" |\n          "),
-                    _vm._delete
-                      ? _c("a", { attrs: { href: _vm._delete } }, [
-                          _vm._v("Delete")
+                    _vm._v(" "),
+                    _vm.token && !_vm._delete
+                      ? _c("span", [
+                          _vm._v("\n            | "),
+                          _vm.detail
+                            ? _c("a", { attrs: { href: _vm.detail } }, [
+                                _vm._v("See more")
+                              ])
+                            : _vm._e(),
+                          _vm._v(" |\n            "),
+                          _vm.edit
+                            ? _c("a", { attrs: { href: _vm.edit } }, [
+                                _vm._v("Edit")
+                              ])
+                            : _vm._e(),
+                          _vm._v(" |\n            ")
                         ])
-                      : _vm._e(),
-                    _vm._v(" |\n          \n        ")
+                      : _vm._e()
                   ])
                 : _vm._e()
             ],

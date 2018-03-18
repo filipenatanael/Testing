@@ -9,23 +9,28 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in itens">
+        <tr v-for="(item, index) in itens">
           <td v-for="i in item">{{ i }}</td>
-
           <td v-if=" detail || edit || _delete">
-             <form  v-if="_delete && token" action="index.html" method="post">
+
+             <form v-bind:id="form_id" v-if="_delete && token" v-bind:action="_delete" method="post">
                <input type="hidden" name="_method" value="DELETE">
                <input type="hidden" name="_token" v-bind:value="token">
 
                | <a v-if="detail" v-bind:href="detail">See more</a> |
                <a v-if="edit" v-bind:href="edit">Edit</a> |
-               <a v-if="_delete" v-bind:href="_delete">Delete</a> |
+               <a href="#" v-on:click="executeForm(index)"> Delete</a>
              </form>
+              <span v-if="!token">
+              | <a v-if="detail" v-bind:href="detail">See more</a> |
+              <a v-if="edit" v-bind:href="edit">Edit</a> |
+              <a v-if="_delete" v-bind:href="_delete">Delete</a> |
+              </span>
+              <span v-if="token && !_delete">
+              | <a v-if="detail" v-bind:href="detail">See more</a> |
+              <a v-if="edit" v-bind:href="edit">Edit</a> |
+              </span>
 
-            | <a v-if="detail" v-bind:href="detail">See more</a> |
-            <a v-if="edit" v-bind:href="edit">Edit</a> |
-            <a v-if="_delete" v-bind:href="_delete">Delete</a> |
-            
           </td>
         </tr>
       </tbody>
@@ -43,6 +48,11 @@
       'edit',
       '_delete',
       'token'
-    ]
+    ],
+    methods: {
+      executeForm: function(index){
+        document.getElementById(index).submit();
+      }
+    }
   }
 </script>
