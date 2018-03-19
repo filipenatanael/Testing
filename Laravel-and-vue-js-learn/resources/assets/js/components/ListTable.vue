@@ -1,6 +1,13 @@
 <template>
   <div>
     <a v-if="create" v-bind:href="create">Create</a>
+    <div class="form-inline">
+       <a v-if="create" v-bind:href="create">Create</a>
+       <div class="form-group pull-right">
+          <input type="search" class="form-control" placeholder="Search" v-model="search"> {{ search }}
+       </div>
+    </div>
+
     <table class="table table-striped table-hover">
       <thead>
         <tr>
@@ -9,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in itens">
+        <tr v-for="(item, index) in listOfItens">
           <td v-for="i in item">{{ i }}</td>
           <td v-if=" detail || edit || _delete">
 
@@ -49,6 +56,21 @@
       '_delete',
       'token'
     ],
+    data: function(){
+      return {
+        search: ''
+      }
+    },
+    computed: {
+      listOfItens: function(){
+        let search_for = "php";
+        return this.itens.filter(response => {
+          return true;
+        });
+
+        return this.itens;
+      }
+    },
     methods: {
       executeForm: function(index){
         document.getElementById(index).submit();
