@@ -4,7 +4,7 @@
     <div class="form-inline">
        <a v-if="create" v-bind:href="create">Create</a>
        <div class="form-group pull-right">
-          <input type="search" class="form-control" placeholder="Search" v-model="search"> {{ search }}
+          <input type="search" class="form-control" placeholder="Search" v-model="search">
        </div>
     </div>
 
@@ -63,6 +63,13 @@
     },
     computed: {
       listOfItens: function(){
+
+        this.itens.sort(function(a,b){
+          if(a[1] < b[1]){ return 1; }
+          else if(a[1] > b[1]){ return -1 }
+          return 0;
+        });
+
         return this.itens.filter(response => {
           for(let i=0; i < response.length; i++){
             if((response[i] + "").toLowerCase().indexOf(this.search.toLowerCase()) >= 0){
