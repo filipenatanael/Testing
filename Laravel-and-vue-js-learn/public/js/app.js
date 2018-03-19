@@ -44159,7 +44159,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token'],
   data: function data() {
     return {
-      search: ''
+      search: '',
+      orderAux: this.order || "asc",
+      orderColumnAux: this.orderColumn || 0
     };
   },
   methods: {
@@ -44167,12 +44169,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       document.getElementById(index).submit();
     },
     orderByColumn: function orderByColumn(column) {
-      this.orderColumn = column;
-      console.log(column);
-      if (this.order.toLowerCase() == "asc") {
-        this.order = 'desc';
+      this.orderColumnAux = column;
+      if (this.orderAux.toLowerCase() == "asc") {
+        this.orderAux = 'desc';
       } else {
-        this.order = 'asc';
+        this.orderAux = 'asc';
       }
     }
   },
@@ -44180,8 +44181,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     listOfItens: function listOfItens() {
       var _this = this;
 
-      var order = this.order || "asc";
-      var orderColumn = this.orderColumn || 0;
+      var order = this.orderAux || "asc";
+      var orderColumn = this.orderColumnAux || 0;
 
       order = order.toLowerCase();
       orderColumn = parseInt(orderColumn);
@@ -44274,14 +44275,14 @@ var render = function() {
         _c(
           "tr",
           [
-            _vm._l(_vm.titles, function(title) {
+            _vm._l(_vm.titles, function(title, index) {
               return _c(
                 "th",
                 {
                   staticStyle: { cursor: "pointer" },
                   on: {
                     click: function($event) {
-                      _vm.orderByColumn(_vm.index)
+                      _vm.orderByColumn(index)
                     }
                   }
                 },

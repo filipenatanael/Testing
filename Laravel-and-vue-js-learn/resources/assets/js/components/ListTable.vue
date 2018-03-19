@@ -11,7 +11,7 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th v-on:click="orderByColumn(index)" v-for=" title in titles" style="cursor:pointer">{{ title }}</th>
+          <th v-on:click="orderByColumn(index)" v-for="(title, index) in titles" style="cursor:pointer">{{ title }}</th>
           <th v-if=" detail || edit || _delete"> Actions</th>
         </tr>
       </thead>
@@ -60,7 +60,9 @@ export default {
   ],
   data: function(){
     return {
-      search: ''
+      search: '',
+      orderAux: this.order || "asc",
+      orderColumnAux: this.orderColumn || 0
     }
   },
   methods: {
@@ -68,20 +70,19 @@ export default {
       document.getElementById(index).submit();
     },
     orderByColumn: function(column){
-      this.orderColumn = column;
-      console.log(column);
-      if(this.order.toLowerCase() == "asc"){
-        this.order = 'desc';
+      this.orderColumnAux = column;
+      if(this.orderAux.toLowerCase() == "asc"){
+        this.orderAux = 'desc';
       }else{
-        this.order = 'asc';
+        this.orderAux = 'asc';
       }
     }
   },
   computed: {
     listOfItens: function(){
 
-      let order = this.order || "asc";
-      let orderColumn = this.orderColumn || 0;
+      let order = this.orderAux || "asc";
+      let orderColumn = this.orderColumnAux || 0;
 
       order = order.toLowerCase();
       orderColumn = parseInt(orderColumn);
