@@ -44162,6 +44162,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       search: ''
     };
   },
+  methods: {
+    executeForm: function executeForm(index) {
+      document.getElementById(index).submit();
+    },
+    orderByColumn: function orderByColumn(column) {
+      this.orderColumn = column;
+      console.log(column);
+      if (this.order.toLowerCase() == "asc") {
+        this.order = 'desc';
+      } else {
+        this.order = 'asc';
+      }
+    }
+  },
   computed: {
     listOfItens: function listOfItens() {
       var _this = this;
@@ -44208,12 +44222,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
       return this.itens;
     }
-  },
-  methods: {
-    executeForm: function executeForm(index) {
-      document.getElementById(index).submit();
-    }
   }
+
 });
 
 /***/ }),
@@ -44265,7 +44275,18 @@ var render = function() {
           "tr",
           [
             _vm._l(_vm.titles, function(title) {
-              return _c("th", [_vm._v(_vm._s(title))])
+              return _c(
+                "th",
+                {
+                  staticStyle: { cursor: "pointer" },
+                  on: {
+                    click: function($event) {
+                      _vm.orderByColumn(_vm.index)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(title))]
+              )
             }),
             _vm._v(" "),
             _vm.detail || _vm.edit || _vm._delete
@@ -44311,19 +44332,19 @@ var render = function() {
                               attrs: { type: "hidden", name: "_token" },
                               domProps: { value: _vm.token }
                             }),
-                            _vm._v("\n\n             | "),
+                            _vm._v("\n\n            | "),
                             _vm.detail
                               ? _c("a", { attrs: { href: _vm.detail } }, [
                                   _vm._v("See more")
                                 ])
                               : _vm._e(),
-                            _vm._v(" |\n             "),
+                            _vm._v(" |\n            "),
                             _vm.edit
                               ? _c("a", { attrs: { href: _vm.edit } }, [
                                   _vm._v("Edit")
                                 ])
                               : _vm._e(),
-                            _vm._v(" |\n             "),
+                            _vm._v(" |\n            "),
                             _c(
                               "a",
                               {
@@ -44360,7 +44381,7 @@ var render = function() {
                                 _vm._v("Delete")
                               ])
                             : _vm._e(),
-                          _vm._v(" |\n            ")
+                          _vm._v(" |\n          ")
                         ])
                       : _vm._e(),
                     _vm._v(" "),
@@ -44378,7 +44399,7 @@ var render = function() {
                                 _vm._v("Edit")
                               ])
                             : _vm._e(),
-                          _vm._v(" |\n            ")
+                          _vm._v(" |\n          ")
                         ])
                       : _vm._e()
                   ])
