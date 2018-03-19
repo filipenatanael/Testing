@@ -44164,11 +44164,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {
     listOfItens: function listOfItens() {
-      var search_for = "php";
-      return this.itens.filter(function (response) {
-        return true;
-      });
+      var _this = this;
 
+      return this.itens.filter(function (response) {
+        for (var i = 0; i < response.length; i++) {
+          if ((response[i] + "").toLowerCase().indexOf(_this.search.toLowerCase()) >= 0) {
+            return true;
+          }
+        }
+        return false;
+      });
       return this.itens;
     }
   },
@@ -44257,7 +44262,7 @@ var render = function() {
                           "form",
                           {
                             attrs: {
-                              id: _vm.form_id,
+                              id: index,
                               action: _vm._delete,
                               method: "post"
                             }

@@ -20,7 +20,7 @@
           <td v-for="i in item">{{ i }}</td>
           <td v-if=" detail || edit || _delete">
 
-             <form v-bind:id="form_id" v-if="_delete && token" v-bind:action="_delete" method="post">
+             <form v-bind:id="index" v-if="_delete && token" v-bind:action="_delete" method="post">
                <input type="hidden" name="_method" value="DELETE">
                <input type="hidden" name="_token" v-bind:value="token">
 
@@ -63,11 +63,14 @@
     },
     computed: {
       listOfItens: function(){
-        let search_for = "php";
         return this.itens.filter(response => {
-          return true;
+          for(let i=0; i < response.length; i++){
+            if((response[i] + "").toLowerCase().indexOf(this.search.toLowerCase()) >= 0){
+              return true;
+            }
+          }
+              return false;
         });
-
         return this.itens;
       }
     },
