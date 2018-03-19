@@ -50,6 +50,8 @@
     props: [
       'titles',
       'itens',
+      'order',
+      'orderColumn',
       'create',
       'detail',
       'edit',
@@ -64,11 +66,31 @@
     computed: {
       listOfItens: function(){
 
-        this.itens.sort(function(a,b){
-          if(a[1] < b[1]){ return 1; }
-          else if(a[1] > b[1]){ return -1 }
-          return 0;
-        });
+        let order = this.order || "asc";
+        let orderColumn = this.orderColumn || 0;
+
+        order = order.toLowerCase();
+        orderColumn = parseInt(orderColumn);
+
+        if(order == "asc"){
+          this.itens.sort(function(a,b){
+            if(a[orderColumn] > b[orderColumn]){ return 1; }
+            else if(a[orderColumn] < b[orderColumn]){ return -1 }
+            return 0;
+          });
+        } else{
+          this.itens.sort(function(a,b){
+            if(a[orderColumn] < b[orderColumn]){ return 1; }
+            else if(a[orderColumn] > b[orderColumn]){ return -1 }
+            return 0;
+          });
+        }
+
+        // this.itens.sort(function(a,b){
+        //   if(a[1] < b[1]){ return 1; }
+        //   else if(a[1] > b[1]){ return -1 }
+        //   return 0;
+        // });
 
         return this.itens.filter(response => {
           for(let i=0; i < response.length; i++){

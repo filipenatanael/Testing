@@ -44156,7 +44156,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['titles', 'itens', 'create', 'detail', 'edit', '_delete', 'token'],
+  props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token'],
   data: function data() {
     return {
       search: ''
@@ -44166,14 +44166,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     listOfItens: function listOfItens() {
       var _this = this;
 
-      this.itens.sort(function (a, b) {
-        if (a[1] < b[1]) {
-          return 1;
-        } else if (a[1] > b[1]) {
-          return -1;
-        }
-        return 0;
-      });
+      var order = this.order || "asc";
+      var orderColumn = this.orderColumn || 0;
+
+      order = order.toLowerCase();
+      orderColumn = parseInt(orderColumn);
+
+      if (order == "asc") {
+        this.itens.sort(function (a, b) {
+          if (a[orderColumn] > b[orderColumn]) {
+            return 1;
+          } else if (a[orderColumn] < b[orderColumn]) {
+            return -1;
+          }
+          return 0;
+        });
+      } else {
+        this.itens.sort(function (a, b) {
+          if (a[orderColumn] < b[orderColumn]) {
+            return 1;
+          } else if (a[orderColumn] > b[orderColumn]) {
+            return -1;
+          }
+          return 0;
+        });
+      }
+
+      // this.itens.sort(function(a,b){
+      //   if(a[1] < b[1]){ return 1; }
+      //   else if(a[1] > b[1]){ return -1 }
+      //   return 0;
+      // });
 
       return this.itens.filter(function (response) {
         for (var i = 0; i < response.length; i++) {

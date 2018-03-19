@@ -11,6 +11,8 @@
       ['10','PHP OO','Course of computer programmer','John .W','25/06/2012'],
       ['15','Vue JS','Course of Vue JS','John .S','27/06/2012']
       ]"
+      order="asc"
+      orderColumn="1"
       create="#create"
       detail="#detail"
       edit="#edit"
