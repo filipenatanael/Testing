@@ -3,7 +3,7 @@
 @section('content')
   <body-site size="12">
     <Panel title="List of articles">
-
+      <bread-crumb></bread-crumb>
       <list-table
       v-bind:titles="['#','Title','Description','Autor','Date']"
       v-bind:itens="

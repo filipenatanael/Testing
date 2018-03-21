@@ -9,18 +9,18 @@
           amount="100"
           title="Articles"
           url="{{ route('articles.index') }}"
-          color="orange"
-          icon="ion ion-stats-bars"
+          color="#6C8CD0"
+          icon="ion-arrow-graph-up-right"
           />
         </div>
 
         <div class="col-md-4">
           <Boxe
           amount="200"
-          title="Shoes"
+          title="Books"
           url="#"
-          color="green"
-          icon="ion ion-stats-bars"
+          color="#2CCCAB"
+          icon="ion-social-dropbox-outline"
           />
         </div>
 
@@ -29,8 +29,8 @@
           amount="300"
           title="Shoes"
           url="#"
-          color="blue"
-          icon="ion ion-stats-bars"
+          color="#FDA285"
+          icon="ion-thermometer"
           />
         </div>
       </div>

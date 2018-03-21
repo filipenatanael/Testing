@@ -81,8 +81,8 @@ export default {
   computed: {
     listOfItens: function(){
 
-      let order = this.orderAux || "asc";
-      let orderColumn = this.orderColumnAux || 0;
+      let order = this.orderAux;
+      let orderColumn = this.orderColumnAux;
 
       order = order.toLowerCase();
       orderColumn = parseInt(orderColumn);
