@@ -7,14 +7,13 @@ use App\Http\Controllers\Controller;
 
 class ArticlesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('admin.articles.index');
+        $breadCrumb = json_encode([
+           ["title" => "Home", "url" => route('home')]
+          ,["title" => "Shopping", "url" => "#"]
+        ]);
+        return view('admin.articles.index', compact('breadCrumb'));
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('content')
   <body-site size="12">
     <Panel title="List of articles">
-      <bread-crumb></bread-crumb>
+      <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
       <list-table
       v-bind:titles="['#','Title','Description','Autor','Date']"
       v-bind:itens="
@@ -19,7 +19,6 @@
       _delete="#delete"
       token="10099649616"
       ></list-table>
-
     </Panel>
   </body-site>
 @endsection
