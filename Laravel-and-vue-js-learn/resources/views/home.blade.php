@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <body-site size="12">
-    <Panel title="Dashboard">
+  <container size="12">
+    <panel-content title="Dashboard">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
       <div class="row">
         <div class="col-md-4">
-          <Boxe
+          <box-dashboard
           amount="100"
           title="Articles"
           url="{{ route('articles.index') }}"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-md-4">
-          <Boxe
+          <box-dashboard
           amount="200"
           title="Books"
           url="#"
@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-4">
-          <Boxe
+          <box-dashboard
           amount="300"
           title="Shoes"
           url="#"
@@ -35,7 +35,7 @@
           />
         </div>
       </div>
-      <Panel title="Dashboard">Testing Vue JS...</Panel>
-    </Panel>
-  </body-site>
+      <panel-content title="Dashboard">Testing Vue JS...</panel-content>
+    </panel-content>
+  </container>
 @endsection

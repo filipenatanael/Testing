@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  <body-site size="12">
+  <container size="12">
     <panel-content title="List of articles">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
 
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-      <list-table
+      <table-component
       v-bind:titles="['#','Title','Description','Autor','Date']"
       v-bind:itens="
       [
@@ -21,9 +21,9 @@
       edit="#edit"
       _delete="#delete"
       token="10099649616"
-      ></list-table>
-    </Panel>
-  </body-site>
+      ></table-component>
+    </panel-content>
+  </container>
 
   <modal-content id="myModal">
     <div class="modal-header">
