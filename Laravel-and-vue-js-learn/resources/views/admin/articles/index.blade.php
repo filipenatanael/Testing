@@ -5,7 +5,7 @@
     <panel-content title="List of articles">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</button>
+      <modal-button type="button" id="myModal" value="Create" btnclass=""></modal-button>
 
       <table-component
       v-bind:titles="['#','Title','Description','Autor','Date']"

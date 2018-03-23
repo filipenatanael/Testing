@@ -1414,7 +1414,7 @@ Vue.component('container', __webpack_require__(58));
 Vue.component('table-component', __webpack_require__(61));
 Vue.component('bread-crumb', __webpack_require__(64));
 Vue.component('modal-content', __webpack_require__(67));
-Vue.component('modal-link', __webpack_require__(70));
+Vue.component('modal-button', __webpack_require__(83));
 
 var app = new Vue({
   el: '#app'
@@ -44643,15 +44643,33 @@ if (false) {
 }
 
 /***/ }),
-/* 70 */
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44668,7 +44686,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\modal\\ModalLink.vue"
+Component.options.__file = "resources\\assets\\js\\components\\modal\\ModalButton.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -44677,9 +44695,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a3ac09e", Component.options)
+    hotAPI.createRecord("data-v-726ca1ae", Component.options)
   } else {
-    hotAPI.reload("data-v-5a3ac09e", Component.options)
+    hotAPI.reload("data-v-726ca1ae", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -44690,7 +44708,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44699,18 +44717,69 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['type', 'id', 'value', 'btnclass']
+});
 
 /***/ }),
-/* 72 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", {}, [
+    !_vm.type || (_vm.type != "button" && _vm.type != "link")
+      ? _c(
+          "button",
+          {
+            class: _vm.btnclass || "btn btn-primary",
+            attrs: {
+              type: "button",
+              "data-toggle": "modal",
+              "data-target": "#" + _vm.id
+            }
+          },
+          [_vm._v(_vm._s(_vm.value))]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.type == "button"
+      ? _c(
+          "button",
+          {
+            class: _vm.btnclass || "btn btn-primary",
+            attrs: {
+              type: "button",
+              "data-toggle": "modal",
+              "data-target": "#" + _vm.id
+            }
+          },
+          [_vm._v(_vm._s(_vm.value))]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.type == "link"
+      ? _c(
+          "a",
+          {
+            class: _vm.btnclass || "",
+            attrs: {
+              href: "#",
+              "data-toggle": "modal",
+              "data-target": "#" + _vm.id
+            }
+          },
+          [_vm._v(_vm._s(_vm.value))]
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -44718,15 +44787,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5a3ac09e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-726ca1ae", module.exports)
   }
 }
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

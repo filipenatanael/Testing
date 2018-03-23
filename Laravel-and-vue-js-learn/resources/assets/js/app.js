@@ -23,7 +23,7 @@ Vue.component('container', require('./components/Container.vue'));
 Vue.component('table-component', require('./components/TableComponent.vue'));
 Vue.component('bread-crumb', require('./components/BreadCrumb.vue'));
 Vue.component('modal-content', require('./components/modal/ModalContent.vue'));
-Vue.component('modal-link', require('./components/modal/ModalLink.vue'));
+Vue.component('modal-button', require('./components/modal/ModalButton.vue'));
 
 const app = new Vue({
     el: '#app'
