@@ -5,6 +5,8 @@
     <panel-content title="List of articles">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
 
+
+
       <modal-button type="button" id="myModal" value="Create" btnclass=""></modal-button>
 
       <table-component
@@ -31,21 +33,30 @@
       <h4 class="modal-title" id="exampleModalLabel">New message</h4>
     </div>
     <div class="modal-body">
-      <form>
+
+      <form-component
+      css=""
+      action=""
+      method="post"
+      enctype=""
+      toekn=""
+      >
         <div class="form-group">
-          <label for="recipient-name" class="control-label">Recipient:</label>
-          <input type="text" class="form-control" id="recipient-name">
+          <label for="recipient-name" class="control-label">Title:</label>
+          <input type="text" class="form-control" id="title">
         </div>
         <div class="form-group">
-          <label for="message-text" class="control-label">Message:</label>
-          <textarea class="form-control" id="message-text"></textarea>
+          <label for="message-text" class="control-label">Description:</label>
+          <textarea class="form-control" id="description"></textarea>
         </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Send message</button>
-    </div>
-  </modal-content>
+        <button class="btn btn-info">Create Course</button>
+      </form-component>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Send message</button>
+  </div>
+</modal-content>
 
 @endsection
