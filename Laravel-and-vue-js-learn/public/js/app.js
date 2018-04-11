@@ -44845,16 +44845,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {
     defineMethod: function defineMethod() {
-      if (this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
-        return this.method.toLowerCase();
-      } else if (this.method.toLowerCase() == "put") {
-        this.alterMethod = this.method.toLowerCase();
-      } else if (this.method.toLowerCase() == "delete") {
-        this.alterMethod = "delete";
+      switch (this.method.toLowerCase()) {
+        case "post":
+          return this.method.toLowerCase();
+          break;
+        case "get":
+          return this.method.toLowerCase();
+          break;
+        case "put":
+          this.alterMethod = this.method.toLowerCase();
+          break;
+        case "put":
+          this.alterMethod = this.method.toLowerCase();
+          break;
+        default:
+          return "post";
       }
-      return "post";
     }
   }
+
+  /*
+  if(this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
+    return this.method.toLowerCase();
+  } else if(this.method.toLowerCase() == "put") {
+    this.alterMethod = this.method.toLowerCase();
+  } else if(this.method.toLowerCase() == "delete") {
+    this.alterMethod = "delete";
+  }
+  return "post";
+  */
+
 });
 
 /***/ }),
@@ -44878,7 +44898,8 @@ var render = function() {
     [
       _vm.alterMethod
         ? _c("input", {
-            attrs: { type: "hidden", name: "_method", value: "alterMethod" }
+            attrs: { type: "hidden", name: "_method" },
+            domProps: { value: _vm.alterMethod }
           })
         : _vm._e(),
       _vm._v(" "),
