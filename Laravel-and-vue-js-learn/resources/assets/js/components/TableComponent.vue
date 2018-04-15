@@ -2,6 +2,8 @@
   <div>
     <a v-if="create" v-bind:href="create">Create</a>
     <div class="form-inline">
+        <button type="button" v-on:click="mutationsTesting()"> Mutations Testing</button>
+      <p>{{ this.$store.state.itens }}</p>
       <a v-if="create && !modal" v-bind:href="create">Create</a>
 
       <modal-button v-if="create && modal" type="button" id="addModal" value="Create" btnclass=""></modal-button>
@@ -86,6 +88,9 @@ export default {
       }else{
         this.orderAux = 'asc';
       }
+    },
+    mutationsTesting: function() {
+        this.$store.commit('setItens',{ hello:"Hello would!" });
     }
   },
   computed: {
