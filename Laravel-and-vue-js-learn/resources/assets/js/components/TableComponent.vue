@@ -128,6 +128,7 @@ export default {
 
       if(this.search) {
         return this.itens.filter(response => {
+          response = Object.values(response);
           for(let i=0; i < response.length; i++){
             if((response[i] + "").toLowerCase().indexOf(this.search.toLowerCase()) >= 0){
               return true;

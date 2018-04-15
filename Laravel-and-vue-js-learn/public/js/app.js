@@ -45208,6 +45208,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       if (this.search) {
         return this.itens.filter(function (response) {
+          response = Object.values(response);
           for (var i = 0; i < response.length; i++) {
             if ((response[i] + "").toLowerCase().indexOf(_this.search.toLowerCase()) >= 0) {
               return true;
