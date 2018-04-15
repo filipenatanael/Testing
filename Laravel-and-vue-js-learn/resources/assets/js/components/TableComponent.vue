@@ -2,12 +2,12 @@
   <div>
     <a v-if="create" v-bind:href="create">Create</a>
     <div class="form-inline">
-        <button type="button" v-on:click="mutationsTesting()"> Mutations Testing</button>
-      <p>{{ this.$store.state.itens }}</p>
+
+      <button type="button" v-on:click="mutationsTesting()"> Mutations Testing</button>
+      <p><b>{{ "this.$store.state.item: " }}</b> {{ this.$store.state.item }}</p>
+
       <a v-if="create && !modal" v-bind:href="create">Create</a>
-
       <modal-button v-if="create && modal" type="button" id="addModal" value="Create" btnclass=""></modal-button>
-
       <div class="form-group pull-right">
         <input type="search" class="form-control" placeholder="Search" v-model="search">
       </div>
@@ -31,7 +31,8 @@
 
               <a v-if="detail" v-bind:href="detail">| See more |</a>
               <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
-              <modal-button v-if="create && modal" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
+              <!-- Pass data(item) to ModalButton by: v-bind:item="item" -->
+              <modal-button v-if="create && modal" v-bind:item="item" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
 
               <a href="#" v-on:click="executeForm(index)"> Delete |</a>
             </form>
@@ -90,7 +91,7 @@ export default {
       }
     },
     mutationsTesting: function() {
-        this.$store.commit('setItens',{ hello:"Hello would!" });
+        this.$store.commit('setItem',{ hello:"Hello would!" });
     }
   },
   computed: {

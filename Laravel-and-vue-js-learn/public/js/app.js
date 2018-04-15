@@ -1416,11 +1416,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_Vuex__["a" /* default */]);
 
 var store = new __WEBPACK_IMPORTED_MODULE_0_Vuex__["a" /* default */].Store({
   state: {
-    itens: { testing: "This works well..." }
+    item: {}
   },
   mutations: {
-    setItens: function setItens(state, obj) {
-      state.itens = obj;
+    setItem: function setItem(state, obj) {
+      state.item = obj;
     }
   }
 });
@@ -45140,6 +45140,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token', 'modal'],
@@ -45163,7 +45164,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     mutationsTesting: function mutationsTesting() {
-      this.$store.commit('setItens', { hello: "Hello would!" });
+      this.$store.commit('setItem', { hello: "Hello would!" });
     }
   },
   computed: {
@@ -45249,7 +45250,10 @@ var render = function() {
           [_vm._v(" Mutations Testing")]
         ),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(this.$store.state.itens))]),
+        _c("p", [
+          _c("b", [_vm._v(_vm._s("this.$store.state.item: "))]),
+          _vm._v(" " + _vm._s(this.$store.state.item))
+        ]),
         _vm._v(" "),
         _vm.create && !_vm.modal
           ? _c("a", { attrs: { href: _vm.create } }, [_vm._v("Create")])
@@ -45372,6 +45376,7 @@ var render = function() {
                             _vm.create && _vm.modal
                               ? _c("modal-button", {
                                   attrs: {
+                                    item: item,
                                     type: "link",
                                     id: "editModal",
                                     value: "Edit |",
@@ -45761,9 +45766,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['type', 'id', 'value', 'btnclass']
+  props: ['type', 'id', 'value', 'btnclass', 'item'],
+  methods: {
+    fillOutTheForm: function fillOutTheForm() {
+      this.$store.commit('setItem', this.item);
+    }
+  }
 });
 
 /***/ }),
@@ -45775,49 +45792,117 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("span", [
-    !_vm.type || (_vm.type != "button" && _vm.type != "link")
-      ? _c(
-          "button",
-          {
-            class: _vm.btnclass || "btn btn-primary",
-            attrs: {
-              type: "button",
-              "data-toggle": "modal",
-              "data-target": "#" + _vm.id
-            }
-          },
-          [_vm._v(_vm._s(_vm.value))]
-        )
+    _vm.item
+      ? _c("span", [
+          !_vm.type || (_vm.type != "button" && _vm.type != "link")
+            ? _c(
+                "button",
+                {
+                  class: _vm.btnclass || "btn btn-primary",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.fillOutTheForm()
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type == "button"
+            ? _c(
+                "button",
+                {
+                  class: _vm.btnclass || "btn btn-primary",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.fillOutTheForm()
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type == "link"
+            ? _c(
+                "a",
+                {
+                  class: _vm.btnclass || "",
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.fillOutTheForm()
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e()
+        ])
       : _vm._e(),
     _vm._v(" "),
-    _vm.type == "button"
-      ? _c(
-          "button",
-          {
-            class: _vm.btnclass || "btn btn-primary",
-            attrs: {
-              type: "button",
-              "data-toggle": "modal",
-              "data-target": "#" + _vm.id
-            }
-          },
-          [_vm._v(_vm._s(_vm.value))]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.type == "link"
-      ? _c(
-          "a",
-          {
-            class: _vm.btnclass || "",
-            attrs: {
-              href: "#",
-              "data-toggle": "modal",
-              "data-target": "#" + _vm.id
-            }
-          },
-          [_vm._v(_vm._s(_vm.value))]
-        )
+    !_vm.item
+      ? _c("span", [
+          !_vm.type || (_vm.type != "button" && _vm.type != "link")
+            ? _c(
+                "button",
+                {
+                  class: _vm.btnclass || "btn btn-primary",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type == "button"
+            ? _c(
+                "button",
+                {
+                  class: _vm.btnclass || "btn btn-primary",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.type == "link"
+            ? _c(
+                "a",
+                {
+                  class: _vm.btnclass || "",
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#" + _vm.id
+                  }
+                },
+                [_vm._v(_vm._s(_vm.value))]
+              )
+            : _vm._e()
+        ])
       : _vm._e()
   ])
 }

@@ -5,8 +5,6 @@
     <panel-content title="List of articles">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
 
-
-
       <table-component
       v-bind:titles="['#','Title','Description']"
       v-bind:itens="{{ $ListOfArticles }}"
@@ -59,31 +57,31 @@
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="exampleModalLabel">New message</h4>
   </div>
-  <div class="modal-body">
 
+  <div class="modal-body">
     <form-component
-    css=""
-    action=""
-    method="post"
-    enctype=""
-    toekn=""
-    >
+      css=""
+      action="#"
+      method="put"
+      enctype="multipart/form-data"
+      toekn="12345"
+      >
       <div class="form-group">
         <label for="recipient-name" class="control-label">Title:</label>
-        <input type="text" class="form-control" id="title">
+        <input type="text" class="form-control" id="title" v-bind:value="$store.state.item.title">
       </div>
       <div class="form-group">
         <label for="message-text" class="control-label">Description:</label>
-        <textarea class="form-control" id="description"></textarea>
+        <textarea class="form-control" id="description" v-model="$store.state.item.description"></textarea>
       </div>
       <button class="btn btn-info">Create Course</button>
     </form-component>
+</div>
 
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  <button type="button" class="btn btn-primary">Send message</button>
-</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Send message</button>
+  </div>
 </modal-content>
 
 <modal-content id="detailsModal">
