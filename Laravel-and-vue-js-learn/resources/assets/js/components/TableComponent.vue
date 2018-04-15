@@ -29,23 +29,26 @@
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" v-bind:value="token">
 
-              <a v-if="detail" v-bind:href="detail">| See more |</a>
+              <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
+              <modal-button v-if="detail && modal" v-bind:item="item" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
               <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
               <!-- Pass data(item) to ModalButton by: v-bind:item="item" -->
-              <modal-button v-if="create && modal" v-bind:item="item" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
+              <modal-button v-if="create && modal" v-bind:item="item" type="link" id="editModal" value="Edits |" btnclass=""></modal-button>
 
               <a href="#" v-on:click="executeForm(index)"> Delete |</a>
             </form>
 
             <span v-if="!token">
-              <a v-if="detail" v-bind:href="detail">| See more |</a>
+              <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
+              <modal-button v-if="detail && modal" v-bind:item="item" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
               <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
               <modal-button v-if="create && modal" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
               <a v-if="_delete" v-bind:href="_delete">Delete |</a>
             </span>
 
             <span v-if="token && !_delete">
-              <a v-if="detail" v-bind:href="detail">| See more |</a>
+              <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
+              <modal-button v-if="detail && modal" v-bind:item="item" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
               <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
               <modal-button v-if="create && modal" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
             </span>

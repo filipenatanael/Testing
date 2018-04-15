@@ -45141,6 +45141,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token', 'modal'],
@@ -45361,10 +45364,22 @@ var render = function() {
                               domProps: { value: _vm.token }
                             }),
                             _vm._v(" "),
-                            _vm.detail
+                            _vm.detail && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detail } }, [
-                                  _vm._v("| See more |")
+                                  _vm._v("| Details |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detail && _vm.modal
+                              ? _c("modal-button", {
+                                  attrs: {
+                                    item: item,
+                                    type: "link",
+                                    id: "detailsModal",
+                                    value: "Details |",
+                                    btnclass: ""
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.create && !_vm.modal
@@ -45379,7 +45394,7 @@ var render = function() {
                                     item: item,
                                     type: "link",
                                     id: "editModal",
-                                    value: "Edit |",
+                                    value: "Edits |",
                                     btnclass: ""
                                   }
                                 })
@@ -45406,10 +45421,22 @@ var render = function() {
                       ? _c(
                           "span",
                           [
-                            _vm.detail
+                            _vm.detail && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detail } }, [
-                                  _vm._v("| See more |")
+                                  _vm._v("| Details |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detail && _vm.modal
+                              ? _c("modal-button", {
+                                  attrs: {
+                                    item: item,
+                                    type: "link",
+                                    id: "detailsModal",
+                                    value: "Details |",
+                                    btnclass: ""
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.create && !_vm.modal
@@ -45443,10 +45470,22 @@ var render = function() {
                       ? _c(
                           "span",
                           [
-                            _vm.detail
+                            _vm.detail && !_vm.modal
                               ? _c("a", { attrs: { href: _vm.detail } }, [
-                                  _vm._v("| See more |")
+                                  _vm._v("| Details |")
                                 ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.detail && _vm.modal
+                              ? _c("modal-button", {
+                                  attrs: {
+                                    item: item,
+                                    type: "link",
+                                    id: "detailsModal",
+                                    value: "Details |",
+                                    btnclass: ""
+                                  }
+                                })
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.create && !_vm.modal
