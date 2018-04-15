@@ -89,14 +89,14 @@ export default {
 
       if(order == "asc"){
         this.itens.sort(function(a,b){
-          if(a[orderColumn] > b[orderColumn]){ return 1; }
-          else if(a[orderColumn] < b[orderColumn]){ return -1 }
+          if(Object.values(a)[orderColumn] > Object.values(b)[orderColumn]){ return 1; }
+          else if(Object.values(a)[orderColumn] <Object.values(b)[orderColumn]){ return -1 }
           return 0;
         });
       } else{
         this.itens.sort(function(a,b){
-          if(a[orderColumn] < b[orderColumn]){ return 1; }
-          else if(a[orderColumn] > b[orderColumn]){ return -1 }
+          if(Object.values(a)[orderColumn] < Object.values(b)[orderColumn]){ return 1; }
+          else if(Object.values(a)[orderColumn] > Object.values(b)[orderColumn]){ return -1 }
           return 0;
         });
       }
@@ -107,14 +107,17 @@ export default {
       //   return 0;
       // });
 
-      return this.itens.filter(response => {
-        for(let i=0; i < response.length; i++){
-          if((response[i] + "").toLowerCase().indexOf(this.search.toLowerCase()) >= 0){
-            return true;
+      if(this.search) {
+        return this.itens.filter(response => {
+          for(let i=0; i < response.length; i++){
+            if((response[i] + "").toLowerCase().indexOf(this.search.toLowerCase()) >= 0){
+              return true;
+            }
           }
-        }
-        return false;
-      });
+          return false;
+        });
+      }
+
       return this.itens;
     }
   },
