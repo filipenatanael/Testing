@@ -51,5 +51,12 @@ Vue.component('form-component', require('./components/FormComponent.vue'));
 
 const app = new Vue({
     el: '#app',
-    store
+    store,
+    mounted: function() {
+      /*
+      function to resove delay when reload the pages 
+        ../resources/views/layout/app.blade.php (<div id="app" style="display:none">)
+      */
+      document.getElementById('app').style.display = "block";
+    }
 });
