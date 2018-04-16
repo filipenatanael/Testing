@@ -54,7 +54,7 @@ const app = new Vue({
     store,
     mounted: function() {
       /*
-      function to resove delay when reload the pages 
+      function to resove delay when reload the pages
         ../resources/views/layout/app.blade.php (<div id="app" style="display:none">)
       */
       document.getElementById('app').style.display = "block";

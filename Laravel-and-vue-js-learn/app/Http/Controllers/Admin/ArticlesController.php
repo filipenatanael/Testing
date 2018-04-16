@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Article;
 
 class ArticlesController extends Controller
 {
@@ -14,10 +15,12 @@ class ArticlesController extends Controller
           ,["title" => "Shopping", "url" => "#"]
         ]);
 
-        $ListOfArticles = json_encode([
-           ["id"=>1,"title" => "PHP OO Course", "description" => "Course of computer programmer on PHP."]
-          ,["id"=>2,"title" => "Vue JS", "description" => "Javascript on Pratice with Vue JS."]
-        ]);
+        // $ListOfArticles = json_encode([
+        //    ["id"=>1,"title" => "PHP OO Course", "description" => "Course of computer programmer on PHP.", "date"=>"2018-01-02"]
+        //   ,["id"=>2,"title" => "Vue JS", "description" => "Javascript on Pratice with Vue JS.", "date"=>"2018-01-02"]
+        // ]);
+
+        $ListOfArticles = json_encode(Article::select('id','title','description','date')->get());
 
         return view('admin.articles.index', compact('breadCrumb', 'ListOfArticles'));
     }
@@ -40,7 +43,9 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Article::create($data);
+        return redirect()->back();
     }
 
     /**
