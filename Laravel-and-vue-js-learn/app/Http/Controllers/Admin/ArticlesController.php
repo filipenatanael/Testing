@@ -45,7 +45,10 @@ class ArticlesController extends Controller
     {
         $data = $request->all();
         $validation = \Validator::make($data, [
-          "title" => "required"
+          "title" => "required",
+          "description" => "required",
+          "content" => "required",
+          "date" => "required"
         ]);
 
         if($validation->fails()) {

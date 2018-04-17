@@ -2,6 +2,14 @@
 
 @section('content')
   <container size="12">
+    @if ($errors->all())
+      @foreach ($errors->all() as $key => $value)
+        <div class="alert alert-danger alert-dismissible fade in">
+         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+         <strong>Danger! </strong> {{ $value }}
+       </div>
+      @endforeach
+    @endif
     <panel-content title="List of articles">
       <bread-crumb v-bind:list="{{$breadCrumb}}"></bread-crumb>
 
@@ -39,11 +47,11 @@
       </div>
       <div class="form-group">
         <label for="content" class="control-label">Content:</label>
-        <textarea class="form-control" name="content" id="content">{{ old('title') }}</textarea>
+        <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
       </div>
       <div class="form-group">
         <label for="message-text" class="control-label">Description:</label>
-        <textarea class="form-control" name="description" id="description" value="{{ old('description') }}"></textarea>
+        <textarea class="form-control" name="description" id="description">{{ old('description') }}</textarea>
       </div>
     </form-component>
     <span slot="buttons">
