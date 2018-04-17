@@ -44,8 +44,17 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $validation = \Validator::make($data, [
+          "title" => "required"
+        ]);
+
+        if($validation->fails()) {
+          return redirect()->back()->withErrors($validation)->withInput();
+        }
+
+
         Article::create($data);
-        return redirect()->back();
+        //return redirect()->back();
     }
 
     /**
