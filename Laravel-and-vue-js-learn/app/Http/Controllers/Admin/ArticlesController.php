@@ -54,10 +54,8 @@ class ArticlesController extends Controller
         if($validation->fails()) {
           return redirect()->back()->withErrors($validation)->withInput();
         }
-
-
         Article::create($data);
-        //return redirect()->back();
+        return redirect()->back();
     }
 
     /**
