@@ -15,10 +15,15 @@
 
 <script>
   export default {
-    props: ['type', 'id', 'value','btnclass','item'],
+    props: ['type', 'id', 'value','btnclass','item', 'url'],
     methods: {
       fillOutTheForm: function() {
-        this.$store.commit('setItem', this.item);
+        //admin/articles/id
+        axios.get(this.url + this.item.id).then(response => {
+          console.log(response.data);
+          this.$store.commit('setItem', response.data);
+        });
+        //this.$store.commit('setItem', this.item);
       }
     }
   }

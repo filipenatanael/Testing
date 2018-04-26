@@ -45151,6 +45151,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token', 'modal'],
@@ -45382,6 +45383,7 @@ var render = function() {
                               ? _c("modal-button", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detail,
                                     type: "link",
                                     id: "detailsModal",
                                     value: "Details |",
@@ -45439,6 +45441,7 @@ var render = function() {
                               ? _c("modal-button", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detail,
                                     type: "link",
                                     id: "detailsModal",
                                     value: "Details |",
@@ -45488,6 +45491,7 @@ var render = function() {
                               ? _c("modal-button", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.detail,
                                     type: "link",
                                     id: "detailsModal",
                                     value: "Details |",
@@ -45876,10 +45880,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['type', 'id', 'value', 'btnclass', 'item'],
+  props: ['type', 'id', 'value', 'btnclass', 'item', 'url'],
   methods: {
     fillOutTheForm: function fillOutTheForm() {
-      this.$store.commit('setItem', this.item);
+      var _this = this;
+
+      //admin/articles/id
+      axios.get(this.url + this.item.id).then(function (response) {
+        console.log(response.data);
+        _this.$store.commit('setItem', response.data);
+      });
+      //this.$store.commit('setItem', this.item);
     }
   }
 });

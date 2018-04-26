@@ -19,7 +19,7 @@
       order="asc"
       orderColumn="1"
       create="#create"
-      detail="#detail"
+      detail="/admin/articles/"
       edit="#edit"
       _delete="#delete"
       token="10099649616"
@@ -82,7 +82,7 @@
 
 <!-- Modal to show detatils -->
 <modal-content id="detailsModal">
-  <h4 class="modal-title" id="exampleModalLabel">@{{ $store.state.item.title }}</h4>
+  <h4 class="modal-title" id="exampleModalLabel"><b>@{{ $store.state.item.title }}</b></h4>
   <div class="modal-body">
     <p>@{{ $store.state.item.description }}</p>
   </div>
