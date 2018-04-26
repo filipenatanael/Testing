@@ -22,7 +22,7 @@
       detail="/admin/articles/"
       edit="/admin/articles/"
       _delete="#delete"
-      token="10099649616"
+      token="{{ csrf_token() }}"
       modal="yes"
       ></table-component>
     </panel-content>
@@ -66,7 +66,7 @@
   v-bind:action="`/admin/articles/${$store.state.item.id}`"
   method="put"
   enctype="multipart/form-data"
-  toekn="12345"
+  token="{{ csrf_token() }}"
   >
   <div class="form-group">
     <label for="recipient-name" class="control-label">Title:</label>

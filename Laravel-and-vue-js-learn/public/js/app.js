@@ -46099,31 +46099,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['css', 'action', 'method', 'enctype', 'token'],
   data: function data() {
     return {
-      alterMethod: ""
+      alterMethod: ''
     };
   },
   computed: {
     defineMethod: function defineMethod() {
-      switch (this.method.toLowerCase()) {
-        case "post":
-          return this.method.toLowerCase();
-          break;
-        case "get":
-          return this.method.toLowerCase();
-          break;
-        case "put":
-          this.alterMethod = this.method.toLowerCase();
-          break;
-        case "put":
-          this.alterMethod = this.method.toLowerCase();
-          break;
-        default:
-          return "post";
+      if (this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
+        return this.method.toLowerCase();
+      } else if (this.method.toLowerCase() == "put") {
+        this.alterMethod = this.method.toLowerCase();
+      } else if (this.method.toLowerCase() == "delete") {
+        this.alterMethod = "delete";
       }
+      return "post";
     }
   }
 
   /*
+  switch (this.method.toLowerCase()) {
+    case "post":
+      return this.method.toLowerCase();
+      break;
+    case "get":
+      return this.method.toLowerCase();
+      break;
+    case "put":
+      this.alterMethod = "put";
+      break;
+    case "delete":
+      this.alterMethod = this.method.toLowerCase();
+      break;
+    default:
+      return "post";
+  }
+  
   if(this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
     return this.method.toLowerCase();
   } else if(this.method.toLowerCase() == "put") {
@@ -46151,7 +46160,8 @@ var render = function() {
       attrs: {
         action: _vm.action,
         method: _vm.defineMethod,
-        enctype: _vm.enctype
+        enctype: _vm.enctype,
+        role: "form"
       }
     },
     [
