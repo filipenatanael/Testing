@@ -39,19 +39,19 @@
     >
     <div class="form-group">
       <label for="recipient-name" class="control-label">Title:</label>
-      <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
+      <input type="text" class="form-control" name="title" id="title" v-model="$store.state.item.title">
     </div>
     <div class="form-group">
       <label for="date" class="control-label">Date:</label>
-      <input type="date" class="form-control" name="date" id="date" value="{{ old('date') }}">
+      <input type="date" class="form-control" name="date" id="date" v-model="$store.state.item.date">
     </div>
     <div class="form-group">
       <label for="content" class="control-label">Content:</label>
-      <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
+      <textarea class="form-control" name="content" id="content" v-model="$store.state.item.content"></textarea>
     </div>
     <div class="form-group">
       <label for="message-text" class="control-label">Description:</label>
-      <textarea class="form-control" name="description" id="description">{{ old('description') }}</textarea>
+      <textarea class="form-control" name="description" id="description" v-model="$store.state.item.description"></textarea>
     </div>
   </form-component>
   <span slot="buttons">
