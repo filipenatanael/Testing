@@ -28,22 +28,20 @@
             <form v-bind:id="index" v-if="_delete && token" v-bind:action="_delete" method="post">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" v-bind:value="token">
-              <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
+                <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
+                <modal-button v-if="detail && modal" v-bind:item="item" v-bind:url="detail" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
 
-              <modal-button v-if="detail && modal" v-bind:item="item" v-bind:url="detail" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
-
-              <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
-              <!-- Pass data(item) to ModalButton by: v-bind:item="item" -->
-              <modal-button v-if="create && modal" v-bind:item="item" type="link" id="editModal" value="Edits |" btnclass=""></modal-button>
-
-              <a href="#" v-on:click="executeForm(index)"> Delete |</a>
+                <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
+                <!-- Pass data(item) to ModalButton by: v-bind:item="item" -->
+                <modal-button v-if="create && modal" v-bind:item="item" v-bind:url="edit" type="link" id="editModal" value="Edits |" btnclass=""></modal-button>
+                <a href="#" v-on:click="executeForm(index)"> Delete |</a>
             </form>
 
             <span v-if="!token">
               <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
               <modal-button v-if="detail && modal" v-bind:item="item"  v-bind:url="detail" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
-              <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
-              <modal-button v-if="create && modal" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
+              <a v-if="create && !modal" v-bind:item="item" v-bind:href="edit">Edit |</a>
+              <modal-button v-if="create && modal" v-bind:item="item"v-bind:url="edit" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
               <a v-if="_delete" v-bind:href="_delete">Delete |</a>
             </span>
 
@@ -51,7 +49,7 @@
               <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
               <modal-button v-if="detail && modal" v-bind:item="item" v-bind:url="detail" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
               <a v-if="create && !modal" v-bind:href="edit">Edit |</a>
-              <modal-button v-if="create && modal" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
+              <modal-button v-if="create && modal" v-bind:item="item"v-bind:url="edit" type="link" id="editModal" value="Edit |" btnclass=""></modal-button>
             </span>
 
           </td>

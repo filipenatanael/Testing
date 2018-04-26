@@ -20,7 +20,7 @@
       orderColumn="1"
       create="#create"
       detail="/admin/articles/"
-      edit="#edit"
+      edit="/admin/articles/"
       _delete="#delete"
       token="10099649616"
       modal="yes"
@@ -63,7 +63,7 @@
 <modal-content id="editModal" title="Edit Modal">
   <form-component
   css=""
-  action="#"
+  v-bind:action="`/admin/articles/${$store.state.item.id}`"
   method="put"
   enctype="multipart/form-data"
   toekn="12345"

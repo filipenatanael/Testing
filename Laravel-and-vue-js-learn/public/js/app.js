@@ -45150,8 +45150,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token', 'modal'],
@@ -45402,6 +45400,7 @@ var render = function() {
                               ? _c("modal-button", {
                                   attrs: {
                                     item: item,
+                                    url: _vm.edit,
                                     type: "link",
                                     id: "editModal",
                                     value: "Edits |",
@@ -45451,14 +45450,18 @@ var render = function() {
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.create && !_vm.modal
-                              ? _c("a", { attrs: { href: _vm.edit } }, [
-                                  _vm._v("Edit |")
-                                ])
+                              ? _c(
+                                  "a",
+                                  { attrs: { item: item, href: _vm.edit } },
+                                  [_vm._v("Edit |")]
+                                )
                               : _vm._e(),
                             _vm._v(" "),
                             _vm.create && _vm.modal
                               ? _c("modal-button", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.edit,
                                     type: "link",
                                     id: "editModal",
                                     value: "Edit |",
@@ -45509,6 +45512,8 @@ var render = function() {
                             _vm.create && _vm.modal
                               ? _c("modal-button", {
                                   attrs: {
+                                    item: item,
+                                    url: _vm.edit,
                                     type: "link",
                                     id: "editModal",
                                     value: "Edit |",
