@@ -45891,6 +45891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       //admin/articles/id
+      console.log(this.url);
       axios.get(this.url + this.item.id).then(function (response) {
         console.log(response.data);
         _this.$store.commit('setItem', response.data);

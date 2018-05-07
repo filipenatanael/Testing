@@ -19,6 +19,7 @@
     methods: {
       fillOutTheForm: function() {
         //admin/articles/id
+        console.log(this.url);
         axios.get(this.url + this.item.id).then(response => {
           console.log(response.data);
           this.$store.commit('setItem', response.data);

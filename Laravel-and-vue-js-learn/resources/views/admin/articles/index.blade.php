@@ -70,11 +70,11 @@
   >
   <div class="form-group">
     <label for="recipient-name" class="control-label">Title:</label>
-    <input type="text" class="form-control" id="title" v-bind:value="$store.state.item.title">
+    <input type="text" class="form-control" name="title" id="title" v-bind:value="$store.state.item.title">
   </div>
   <div class="form-group">
     <label for="message-text" class="control-label">Description:</label>
-    <textarea class="form-control" id="description" v-model="$store.state.item.description"></textarea>
+    <textarea class="form-control" name="description" id="description" v-model="$store.state.item.description"></textarea>
   </div>
   <button class="btn btn-info">Save Changes</button>
 </form-component>
