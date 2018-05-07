@@ -21,7 +21,7 @@
       create="#create"
       detail="/admin/articles/"
       edit="/admin/articles/"
-      _delete="#delete"
+      _delete="/admin/articles/"
       token="{{ csrf_token() }}"
       modal="yes"
       ></table-component>
@@ -70,7 +70,7 @@
   >
   <div class="form-group">
     <label for="recipient-name" class="control-label">Title:</label>
-    <input type="text" class="form-control" name="title" id="title" v-bind:value="$store.state.item.title">
+    <input type="text" class="form-control" name="title" id="title" v-model="$store.state.item.title">
   </div>
   <div class="form-group">
     <label for="message-text" class="control-label">Description:</label>

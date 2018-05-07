@@ -1,13 +1,12 @@
 <template>
   <div>
-    <a v-if="create" v-bind:href="create">Create</a>
     <div class="form-inline">
-
       <button type="button" v-on:click="mutationsTesting()"> Mutations Testing</button>
       <p><b>{{ "this.$store.state.item: " }}</b> {{ this.$store.state.item }}</p>
 
-      <a v-if="create && !modal" v-bind:href="create">Create</a>
+      <!-- <a v-if="create && !modal" v-bind:href="create">Create</a> -->
       <modal-button v-if="create && modal" type="button" id="addModal" value="Create" btnclass=""></modal-button>
+
       <div class="form-group pull-right">
         <input type="search" class="form-control" placeholder="Search" v-model="search">
       </div>
@@ -24,10 +23,11 @@
         <tr v-for="(item, index) in listOfItens">
           <td v-for="i in item">{{ i }}</td>
           <td v-if=" detail || edit || _delete">
-
-            <form v-bind:id="index" v-if="_delete && token" v-bind:action="_delete" method="post">
+            <!-- (v-bind:action="_delete + item.id") Ex: /admin/articles/200 -->
+            <form v-bind:id="index" v-if="_delete && token" v-bind:action="_delete + item.id" method="post">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" v-bind:value="token">
+
                 <a v-if="detail && !modal" v-bind:href="detail">| Details |</a>
                 <modal-button v-if="detail && modal" v-bind:item="item" v-bind:url="detail" type="link" id="detailsModal" value="Details |" btnclass=""></modal-button>
 
@@ -35,6 +35,7 @@
                 <!-- Pass data(item) to ModalButton by: v-bind:item="item" -->
                 <modal-button v-if="create && modal" v-bind:item="item" v-bind:url="edit" type="link" id="editModal" value="Edits |" btnclass=""></modal-button>
                 <a href="#" v-on:click="executeForm(index)"> Delete |</a>
+
             </form>
 
             <span v-if="!token">

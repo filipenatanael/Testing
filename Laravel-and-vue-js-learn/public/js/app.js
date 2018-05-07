@@ -45150,6 +45150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['titles', 'itens', 'order', 'orderColumn', 'create', 'detail', 'edit', '_delete', 'token', 'modal'],
@@ -45239,10 +45240,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.create
-      ? _c("a", { attrs: { href: _vm.create } }, [_vm._v("Create")])
-      : _vm._e(),
-    _vm._v(" "),
     _c(
       "div",
       { staticClass: "form-inline" },
@@ -45264,10 +45261,6 @@ var render = function() {
           _c("b", [_vm._v(_vm._s("this.$store.state.item: "))]),
           _vm._v(" " + _vm._s(this.$store.state.item))
         ]),
-        _vm._v(" "),
-        _vm.create && !_vm.modal
-          ? _c("a", { attrs: { href: _vm.create } }, [_vm._v("Create")])
-          : _vm._e(),
         _vm._v(" "),
         _vm.create && _vm.modal
           ? _c("modal-button", {
@@ -45353,7 +45346,7 @@ var render = function() {
                           {
                             attrs: {
                               id: index,
-                              action: _vm._delete,
+                              action: _vm._delete + item.id,
                               method: "post"
                             }
                           },
