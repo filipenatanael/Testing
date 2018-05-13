@@ -99,6 +99,8 @@ export default {
   },
   computed: {
     listOfItens: function(){
+      // .data bacause i use paginate
+      let list = this.itens.data;
 
       let order = this.orderAux;
       let orderColumn = this.orderColumnAux;
@@ -107,13 +109,13 @@ export default {
       orderColumn = parseInt(orderColumn);
 
       if(order == "asc"){
-        this.itens.sort(function(a,b){
+        list.sort(function(a,b){
           if(Object.values(a)[orderColumn] > Object.values(b)[orderColumn]){ return 1; }
           else if(Object.values(a)[orderColumn] <Object.values(b)[orderColumn]){ return -1 }
           return 0;
         });
       } else{
-        this.itens.sort(function(a,b){
+        list.sort(function(a,b){
           if(Object.values(a)[orderColumn] < Object.values(b)[orderColumn]){ return 1; }
           else if(Object.values(a)[orderColumn] > Object.values(b)[orderColumn]){ return -1 }
           return 0;
@@ -138,7 +140,7 @@ export default {
         });
       }
 
-      return this.itens;
+      return list;
     }
   },
 

@@ -15,7 +15,7 @@
 
       <table-component
       v-bind:titles="['#','Title','Description','Date']"
-      v-bind:itens="{{ $ListOfArticles }}"
+      v-bind:itens="{{ json_encode($ListOfArticles) }}"
       order="asc"
       orderColumn="1"
       create="#create"
@@ -25,6 +25,12 @@
       token="{{ csrf_token() }}"
       modal="yes"
       ></table-component>
+
+      <div align="center">
+        {{ $ListOfArticles->links() }}
+        {{-- {{ $ListOfArticles }} --}}
+      </div>
+
     </panel-content>
   </container>
 

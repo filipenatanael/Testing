@@ -45181,6 +45181,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     listOfItens: function listOfItens() {
       var _this = this;
 
+      // .data bacause i use paginate
+      var list = this.itens.data;
+
       var order = this.orderAux;
       var orderColumn = this.orderColumnAux;
 
@@ -45188,7 +45191,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       orderColumn = parseInt(orderColumn);
 
       if (order == "asc") {
-        this.itens.sort(function (a, b) {
+        list.sort(function (a, b) {
           if (Object.values(a)[orderColumn] > Object.values(b)[orderColumn]) {
             return 1;
           } else if (Object.values(a)[orderColumn] < Object.values(b)[orderColumn]) {
@@ -45197,7 +45200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           return 0;
         });
       } else {
-        this.itens.sort(function (a, b) {
+        list.sort(function (a, b) {
           if (Object.values(a)[orderColumn] < Object.values(b)[orderColumn]) {
             return 1;
           } else if (Object.values(a)[orderColumn] > Object.values(b)[orderColumn]) {
@@ -45225,7 +45228,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         });
       }
 
-      return this.itens;
+      return list;
     }
   }
 
