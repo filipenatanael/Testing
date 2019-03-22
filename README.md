@@ -3,11 +3,24 @@
 <h1 align="center">PHP & Laravel Coding Practice</h1>
 
 <p align="justify">
-PHP & Laravel Coding Practice ...
+This repository is intended for codes developed during the study/updates of PHP functionalities and related frameworks.
 </p>
 
-## Projects
+### Projects
 
-- simple-ecommerce-website
-- laravel-docker-microsoft-azure
-- laravel-configuration-oracle-11g
+- **php7-coding-practice**
+  - AutoloadComposer
+  - WritingSecure
+  - PHP7 Updates
+  - MVC (Model-view-controller)
+  - PDO (PHP Data Objects)
+  - PDO-DAO
+  - PHPConnect
+- **laravel-academic-management**
+- **laravel-blade-templete-vuejs**
+- **laravel-configuration-oracle-11g**
+- **laravel-docker-microsoft-azure**
+- **simple-ecommerce-website**
+- **swagger-integration-to-laravel-5**
+
+
